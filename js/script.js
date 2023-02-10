@@ -89,7 +89,7 @@ console.log(isChecked || !isClosed);
     }
 Проверить, чтобы все работало без ошибок в консоли */
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?' , ''); 
+/*const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?' , ''); 
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -107,4 +107,710 @@ const a = prompt ('Один из последних просмотренных �
 personalMovieDB.movies[a] = b;  
 personalMovieDB.movies[c] = d;  
 
-console.log(personalMovieDB);
+console.log(personalMovieDB);*/
+
+if (4 == 9) {
+    console.log('Ok!');
+} else {
+    console.log('Error');
+}
+
+if (4 == 4) {
+    console.log('Ok!');
+}
+
+/*const num = 50;
+
+if (num < 50) {
+    console.log('Error');
+} else if (num > 100) {
+    console.log('More');
+} else {
+    console.log('Ok');
+}
+
+//тернарный оператор, 3 argumenta 
+(num === 50) ? console.log('Ok') : console.log('Error');*/
+
+const num1 = 50;
+switch (num1) {
+    case 49:
+        console.log('incorect');
+        break;
+    case 100:
+        console.log('incorect');
+        break;
+    case 50:
+        console.log('corect');
+        break;  
+    default:
+        console.log('nu');
+        break;         
+}
+
+//if (true-false)
+const hamburger = true;
+const fries = true;
+
+if (hamburger && fries) {
+    console.log('Not hungried');
+}
+
+console.log((hamburger && fries));
+
+//if (number)
+const hamburgerL = 3;
+const friesL = 1;
+const colaL = 0;
+
+console.log(hamburgerL === 3 && colaL && friesL);
+
+if (hamburgerL === 3 && colaL ===1 && friesL) {
+    console.log('we are not hungried');
+} else {
+    console.log('we leave');
+}
+
+console.log(1 && 0);
+console.log(1 && 5);
+console.log(null && 5);
+console.log(0 && 'kjkjkjjku');
+
+const hamburgerS = 0;
+const friesS = null;
+const colaS = 0;
+
+//else
+if (hamburgerS || colaS || friesS) {
+    console.log('we are not hungried');
+} else {
+    console.log('we leave');
+}
+
+console.log (hamburgerS || colaS || friesS);
+
+
+let johnReport, mariaReport, ruslanReport = 'done';
+console.log(johnReport || mariaReport || ruslanReport);
+
+const hamburgerR = 3;
+const friesR = 3;
+const colaR = 0;
+const nuggetsR = 2;
+
+if (hamburgerR === 3 && colaR === 2 || friesR === 3 && nuggetsR) {
+    console.log('we eat');
+} else {
+    console.log('we leave');
+}
+
+//task
+console.log(hamburgerR === 3 && colaR === 2 || friesR === 3 && nuggetsR);
+
+console.log(!0);
+
+console.log( NaN || 2 || undefined );
+
+
+console.log( NaN && 2 && undefined );
+
+
+console.log( 1 && 2 && 3 );
+
+
+console.log( !1 && 2 || !3 );
+
+
+console.log( 25 || null && !3 );
+
+
+console.log( NaN || null || !3 || undefined || 5);
+
+
+console.log( NaN || null && !3 && undefined || 5);
+
+
+console.log( 5 === 5 && 3 > 1 || 5);
+
+//task
+/*const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+
+if (hamburger === 3 && cola || fries === 3 && nuggets) {
+   console.log('Done!')
+}
+
+//task
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
+
+
+if (hamburger || cola || fries === 3 || nuggets) {
+   console.log('Done!')
+}
+
+//task
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
+
+
+if (hamburger && cola || fries === 3 && nuggets) {
+   console.log('Done!')
+}*/
+
+//cicluri
+let num2 = 50;
+
+/*while (num2 <= 55) {
+    console.log(num2);
+    num2++;
+}*/
+
+/*do {
+    console.log(num2);
+    num2++; 
+}
+while (num2 <= 55);*/
+
+//i-iterator
+for (let i = 1; i < 8; i++) {
+    console.log(num2);
+    num2++;
+}
+
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        //break;
+        continue;
+    }
+    console.log(i);
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+for (let i = 0; i < 5; ++i) {
+    console.log(i);
+}
+
+for (let i = 2; i <= 10; i++) {
+    if (i % 2 == 0) {
+      console.log(i);
+    }
+}
+
+
+let num;
+
+do {
+  num = prompt ("Введите число больше 100?", 0);
+} while (num <= 100 && num);
+
+//cicluri in cicluri
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+        
+    }
+}
+
+//*
+//** 
+//*** 
+//****
+//*****
+//******
+
+let resultS = '';
+const length = 7;
+
+for (let i = 1; i < length; i++) {
+
+    for (let j = 0; j < i; j++) {
+        resultS += '*';
+    }
+
+    resultS += '\n';
+}
+
+console.log(resultS);
+
+// "first:" este metca
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`Second level: ${j}`);
+        for (let k = 0; k < 3; k++) {
+            if (k === 2) continue first;
+            console.log(`Third level: ${k}`);
+        }
+    }
+}
+
+//
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`Second level: ${j}`);
+        for (let k = 0; k < 3; k++) {
+            if (k === 2) break first;
+            console.log(`Third level: ${k}`);
+        }
+    }
+}
+
+//zadaci#1
+for (let i=5; i <= 10; i++) {
+    console.log(i);
+}
+
+//zadaci#2
+for (let i=20; i>=10; i--) {
+    if (i === 13) break;
+    
+    console.log(i);
+}
+
+//zadaci#3
+for ( let i = 2; i <= 10; i++) {
+    if (i % 2 == 0)
+    console.log(i);
+}
+
+//zadaci#4  NEREZOLVATA!!!!!!!!!!!!!!!!!!!!!!!!
+/*for (let i = 2; i <= 16; i++) {
+    if (i % 2 === 0) {
+        continue;
+    } else {
+        console.log(i);
+    }
+}*/
+
+let iZ = 2;
+
+while (iZ <= 16) {
+    if (iZ % 2 === 0) {
+     iZ++;
+     continue;
+    } else {
+        console.log(iZ);
+    }
+    iZ++;
+} 
+
+
+//zadaci#5
+const arrayOfNumbers = [];
+
+for (let i = 5; i < 11; i++) {
+    arrayOfNumbers[i - 5] = i;
+}
+
+console.log(arrayOfNumbers);
+
+
+//zadacia
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//***********
+const lines = 5;
+let result = '';
+
+for (let i = 0; i <= lines; i++) {
+    for (let j = 0; j < lines - i; j++) {
+        result += " ";
+    }
+    for (let j = 0; j < 2 * i + 1; j++) {
+        result += "*";
+    }
+    result += "\n";
+}
+
+console.log(result);
+
+
+/* Задание на урок:
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять. (К любой строке можно обратиться как 
+str.length - и получить её длину)
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+/*const numberOfFilms2 = +prompt('Сколько фильмов вы уже посмотрели?' , ''); 
+
+const personalMovieDB2 = {
+    count: numberOfFilms2,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for (let i = 0; i < 2; i++) {
+    const a = prompt ('Один из последних просмотренных фильмов?', ''),
+          b = prompt ('На сколько оцените его?', '');
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB2.movies[a] = b;  
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+
+
+}
+
+    if (personalMovieDB2.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB2.count >= 10 && personalMovieDB2.count < 30) {
+        console.log("Вы классический зритель");
+    } else if ( personalMovieDB2.count >= 30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Произошла ошибка");
+    }
+console.log(personalMovieDB2);*/
+
+//functii
+function showFirstMessage () {
+    console.log("Hello World");
+}
+
+showFirstMessage ();
+
+
+function showFirstMessage (text) {
+    console.log(text);
+}
+
+showFirstMessage ("Hello World");
+
+let num4 = 20;
+
+function showFirstMessage (text) {
+    console.log(text);
+    let num4 = 10;
+    console.log(num4);
+}
+
+showFirstMessage ("Hello World");
+console.log(num4);
+
+function calc(a, b) {
+    return(a + b);
+}
+console.log(calc(3, 4));
+console.log(calc(5, 8));
+console.log(calc(10, 4));
+
+function ret() {
+    let num = 50;
+
+    //
+
+
+    return(num);
+}
+const anotherNumber = ret();
+console.log(anotherNumber);
+
+const logger = function() {
+    console.log("Hello");
+};
+logger();
+
+//const calc = (a, b) => a + b;
+
+//zamikanie
+function createCounter() {
+    let counter = 0;
+    const myFunction = function() {
+        counter = counter + 1;
+        return counter;
+    };
+    return myFunction;
+}
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+console.log('example increment', c1, c2, c3);
+
+
+function convert(amount) {
+    console.log(20 * amount);
+}
+convert(500);
+
+const usdCurr1 = 18;
+const eurCurr = 21;
+
+function convert(amount, curr) {
+    console.log(curr * amount);
+}
+convert(500, usdCurr1);
+convert(500, eurCurr);
+
+//importanta "result"-ului
+const usdCurr = 18;
+const discount = 0.9;
+
+function convert(amount, curr) {
+    return curr * amount;
+}
+function promotion (result) {
+    console.log(result * discount);
+}
+/*promotion(convert(500, usdCurr));*/
+const res = convert(500, usdCurr);
+promotion(res);
+
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 3) {
+            return;
+        }
+    }
+    console.log('Done');
+}
+test();
+
+//undifaind
+function doNothing() {};
+console.log(doNothing() === undefined);
+
+
+
+
+
+//ex.6,zadacia 1
+function sayHello(nameV) {
+    return `Hello, ${nameV}!`;
+}
+
+console.log(sayHello('Valera'));
+
+
+
+//ex.6,zadacia 2
+function returnNumber1 (num5) {
+    return [num5 - 1, num5, num5 + 1];
+}
+
+console.log(returnNumber1(5));
+
+
+//ex.6,zadacia 3
+function getMathResult(num, times) {
+    if (typeof(times) !== 'number' || times <= 0) {
+        return num;
+    }
+
+    let str = '';
+
+    for (let i = 1; i <= times; i++) {
+        if (i === times) {
+            str += `${num * i}`;
+            // Тут без черточек в конце
+        } else {
+            str += `${num * i}---`;
+            // Это тоже самое, что и
+            // str = str + num * i + "---"
+        }
+    }
+
+    return str;
+}
+
+console.log(getMathResult(10, 5));
+
+//string
+const str = "test";
+console.log(str.toUpperCase());
+console.log(str.length);
+console.log(str);
+
+
+const arr1 = [1, 2, 4];
+console.log(arr1.length);
+
+//poisk po straki
+const fruit = "Some fruit";
+console.log(fruit.indexOf("fruit"));
+
+const logg = "Hello world";
+console.log(logg.slice(6, 11)); //pot folosi 'minus'
+console.log(logg.substring(6, 11)); //nu pot folosi 'minus'
+console.log(logg.substr(6, 5)); // '5' simboluri dupa a '6'-lea caracter
+
+//aici ceva nu merge 'print'
+var a = 'a';
+var b = 'b';
+if (a < b) { // true
+     print(a + ' меньше чем ' + b);
+} else if (a > b) {
+     print(a + ' больше чем ' + b);
+} else {
+     print(a + ' и ' + b + ' равны.');
+}
+console.log();
+
+var s1 = '2 + 2';             // создаёт строковый примитив
+var s2 = new String('2 + 2'); // создаёт объект String
+console.log(eval(s1));        // выведет число 4
+console.log(eval(s2));        // выведет строку '2 + 2'
+console.log(eval(s2.valueOf())); // выведет число 4
+
+//`${..}`
+function sum(a, b) {
+    return a + b;
+  }
+  
+console.log(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+
+
+let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+
+console.log(guestList); // список гостей, состоящий из нескольких строк
+
+
+let str1 = "Hello\nWorld";
+
+let str2 = `Hello
+World`;
+
+console.log(str1 == str2); // true
+
+console.log( 'I\'m the Walrus!' ); // I'm the Walrus!
+console.log( `I\'m the Walrus!` ); // I'm the Walrus!
+
+for (let char of "Hello") {
+    console.log(char); // H,e,l,l,o (char — сначала "H", потом "e", потом "l" и т.д.)
+}
+
+
+function checkSpam(str) {
+    let lowerStr = str.toLowerCase();
+  
+    return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+  }
+  
+console.log( checkSpam('buy ViAgRA now') );
+console.log( checkSpam('free xxxxx') );
+console.log( checkSpam("innocent rabbit") );
+
+//number
+const num6 = 12.2;
+console.log(Math.round(num6));
+
+const test2 = "12.2px";
+console.log(parseInt(test2)); //12
+console.log(parseFloat(test2)); //12.2
+
+let num7 = 1.23456;
+
+console.log( Math.floor(num7 * 100) / 100 ); // 1.23456 -> 123.456 -> 123 -> 1.23
+
+
+/* Задание на урок:
+1) Первую часть задания повторить по уроку
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+P.S. Функции вызывать не обязательно */
+
+let numberOfFilms3;
+
+function start () {
+    numberOfFilms3 = +prompt('Сколько фильмов вы уже посмотрели?' , '');
+
+    while (numberOfFilms3 == '' || numberOfFilms3 == null || isNaN (numberOfFilms3)) {
+        numberOfFilms3 = +prompt('Сколько фильмов вы уже посмотрели?' , '');
+    }
+}
+start();
+
+const personalMovieDB3 = {
+    count: numberOfFilms3,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+
+function rememberMyFilms () {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt ('Один из последних просмотренных фильмов?', ''),
+              b = prompt ('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB3.movies[a] = b;  
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
+    
+    
+    }
+    
+}
+//rememberMyFilms ();
+
+
+function detectPersonalLevel () {
+    if (personalMovieDB3.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB3.count >= 10 && personalMovieDB3.count < 30) {
+        console.log("Вы классический зритель");
+    } else if ( personalMovieDB3.count >= 30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Произошла ошибка");
+    }
+
+}
+//detectPersonalLevel ();
+
+
+
+function showMyDB (hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB3);
+    }
+}
+showMyDB (personalMovieDB3.privat);
+
+
+function writeYourGenres () {
+    for (let i = 1; i <= 3; i++) {
+        const genre = prompt (`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB3.genres[i - 1] = genre;
+    }
+}
+writeYourGenres ();
