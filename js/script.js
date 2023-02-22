@@ -48,7 +48,7 @@ const category = 'toys';
 console.log(`https://someurl.com/${category}/5`);
 
 const user = 'Ivan';
-alert(`Hello, ${user}`);
+console.log(`Hello, ${user}`);
 
 
 let incr = 10,      
@@ -661,7 +661,7 @@ console.log(logg.slice(6, 11)); //pot folosi 'minus'
 console.log(logg.substring(6, 11)); //nu pot folosi 'minus'
 console.log(logg.substr(6, 5)); // '5' simboluri dupa a '6'-lea caracter
 
-//aici ceva nu merge 'print'
+//aici ceva nu merge 'print'!!!!!!
 var a = 'a';
 var b = 'b';
 if (a < b) { // true
@@ -765,7 +765,7 @@ const personalMovieDB3 = {
 
 function rememberMyFilms () {
     for (let i = 0; i < 2; i++) {
-        const a = prompt ('Один из последних просмотренных фильмов?', ''),
+        const a = prompt ('Один из последних просмотренных фильмов?', '').trim(),
               b = prompt ('На сколько оцените его?', '');
     
         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
@@ -780,7 +780,7 @@ function rememberMyFilms () {
     }
     
 }
-//rememberMyFilms ();
+rememberMyFilms ();
 
 
 function detectPersonalLevel () {
@@ -814,3 +814,235 @@ function writeYourGenres () {
     }
 }
 writeYourGenres ();
+
+
+//zadacia 7
+function calculateVolumeAndArea(length) {
+    if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+        return "При вычислении произошла ошибка";
+    }
+
+    let volume = 0,
+        area = 0;
+
+    volume = length * length * length;
+    // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+    // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+    area = 6 * (length * length);
+
+    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+}
+
+console.log(calculateVolumeAndArea(5));
+
+function getCoupeNumber(seatNumber) {
+    if (typeof (seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+        return "Ошибка. Проверьте правильность введенного номера места";
+    }
+
+    if (seatNumber === 0 || seatNumber > 36) {
+        return "Таких мест в вагоне не существует";
+    }
+
+    return Math.ceil(seatNumber / 4);
+    // тут очень много вариантов решения, но выбрал один из элегантных :)
+}
+
+console.log(getCoupeNumber(33));
+
+//zadacia 8
+function getTimeFromMinutes(minutes) {
+    if (typeof (minutes) !== 'number' || minutes < 0 || !Number.isInteger(minutes)) {
+        return "Ошибка, проверьте данные";
+    } 
+
+    const hours = Math.floor(minutes / 60);
+    const minute = minutes % 60;
+
+    let hoursStr = '';
+
+    switch (hours) {
+        case 0:
+            hoursStr = 'часов';
+            break;
+        case 1:
+            hoursStr = 'час';
+            break;        
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = 'часа';
+            break;
+        default:
+            hoursStr = 'часов';    
+    }
+
+    return `Это ${hours} ${hoursStr} и ${minute} минут`;
+}
+console.log(getTimeFromMinutes(150));
+
+
+function findMaxNumber (a, b, c, d) {
+    if (typeof (a) !== 'number' ||
+        typeof (b) !== 'number' ||
+        typeof (c) !== 'number' ||
+        typeof (d) !== 'number') {
+        return 0;
+    } else {
+        return Math.max(a, b, c, d);
+    }
+}
+console.log(findMaxNumber (4, 5.2, 88.5, 10));
+console.log(findMaxNumber (4, '8', 10, 99));
+
+//zadacia 9
+function fib(numberFib) {
+    if (typeof (numberFib) !== 'number' || numberFib < 0 || !Number.isInteger(numberFib)) {
+        return "";
+    }
+
+    let a = 0;
+    let b = 1;
+    let totalFib = '';
+
+    for (let i = 0; i < numberFib; i++) {
+        if (i + 1 === numberFib) {
+            totalFib += `${a}`;
+        } else {
+            totalFib += `${a} `;
+        }
+        let c = a + b;
+        a = b;
+        b = c;
+
+    }
+    
+    return totalFib;
+}
+
+console.log(fib(7));
+
+
+//callback
+function learnJS (lang, callback) {
+    console.log(`Invat : ${lang}`);
+    callback();
+}
+function done() {
+    console.log('Lesson done');
+}
+learnJS('JavaScript', done);
+
+//obiecti
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    color: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+};
+options.makeTest();
+const {border, bg} = options.color; //destructurizare
+console.log(border);
+//console.log(Object.keys(options).length);
+//console.log(options.name);
+//delete options.name;
+//console.log(options);
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Svoistva ${i} imeet znacenia ${options[key][i]}`);
+        }
+    } else {
+    console.log(`Svoistva ${key} imeet znacenia ${options[key]}`);
+    }
+}
+
+//masivi i psevdomasivi
+const arr2 = [1, 3 , 5, 8, 9];
+arr2.forEach(function(item, i, arr2) {
+    console.log(`${i}: ${item} este in masivul ${arr2}`);
+});
+//arr2.pop();
+//arr2.push(9);
+//console.log(arr2);
+/*for (let i = 0; i < arr2.length; i++ ) {
+    console.log(arr2[i]);
+}*/
+for (let value of arr2) {
+    console.log(value);
+}
+
+//metodi masiva
+const str3 = prompt ("", "");
+const products = str3.split(", ");
+//products.sort();
+console.log(products.join('; '));
+
+//spread operatot
+const video = ['v1', 'v2', 'v3'],
+      blogs = ['b1', 'b2', 'b3', 'b4'],
+      internet = [...video, ...blogs, 'fb', 'instagram'];
+
+console.log(internet);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const num8 = [4, 11, 88];
+log(...num8);   //pretoperator
+
+
+//zadacia 10 
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+//const {languages, programmingLangs, exp} = personalPlanPeter.skills; //destructurizare
+//console.log(exp);
+
+function showExperience(plan) {
+    const {exp} = plan.skills;
+    return exp;
+}
+console.log(showExperience(personalPlanPeter));
+
+
+function showProgrammingLangs(plan) {
+    const {programmingLangs} = plan.skills;
+   
+    for (let key in programmingLangs) {
+        console.log(`Язык ${key} изучен на ${programmingLangs[key]}\n`);
+    }
+    
+    return programmingLangs;
+}
+console.log(showProgrammingLangs(personalPlanPeter));
+//nu prea am inteles zadacia!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+function showAgeAndLangs(plan) {
+    const {age} = plan;
+    const {languages} = plan.skills;
+    let str = `Мне ${age} и я владею языками: `;
+
+    languages.forEach(function(lang) {
+        str += `${lang.toUpperCase()} `;
+    });
+
+    return str;
+}
+console.log(showAgeAndLangs(personalPlanPeter));
