@@ -1046,3 +1046,64 @@ function showAgeAndLangs(plan) {
     return str;
 }
 console.log(showAgeAndLangs(personalPlanPeter));
+
+//zadacia 11
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+function showFamily(arr) {
+    
+    if (arr.length === 0) {
+        console.log('Семья пуста');
+    } else {
+        console.log(`Семья состоит из: ${arr}`);
+    }
+    
+}
+console.log(showFamily(family));
+
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(city => {
+        console.log(city.toLowerCase());
+    });
+}
+console.log(standardizeStrings(favoriteCities));
+
+const someString = 'This is some strange string';
+function reverse(str) {
+    
+    if (typeof(str) !== 'string') {
+        return "Ошибка!";
+    } 
+    return str.split('').reverse().join('');
+}
+console.log(reverse(someString));
+
+
+
+
+
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+function availableCurr(arr, missingCurr) {
+    if (arr.length === 0) {
+        console.log('Нет доступных валют');
+    } 
+    
+    
+    let result = 'Доступные валюты:\n';
+    arr.forEach(function (money) {
+     if (money !== missingCurr) {
+         
+        result += `${money}\n`;
+     }
+    });
+    return result;
+    }
+
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+
