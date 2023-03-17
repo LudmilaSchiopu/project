@@ -1202,8 +1202,173 @@ const personalMovieDB4 = {
 };
 
 
+//exercise 13
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+};
+
+function isBudgetEnough(data) {
+    let square = '';
+    let volume = '';
+
+    data.shops.forEach (shop => {
+        square += shop.width * shop.length;
+    });
+
+    volume = data.height * square;
+
+    if (data.budget - (volume * data.moneyPer1m3) >= 0) {
+        return 'Бюджета достаточно';
+    } else {
+        return 'Бюджета недостаточно';
+    }
+}
+console.log(isBudgetEnough(shoppingMallData));
 
 
+//dinamiciskaia tipizatia
+//to string
+//1)....se foloseste rar
+console.log(typeof(String(null)));
+console.log(String(null));
+console.log(String(4));
+
+//2)konkodinatia
+console.log(typeof(5 + ''));
+
+const num9 = 5;
+console.log("https://vk.com/catalog/" + num9);
+
+//to Number
+//1)....se foloseste rar
+console.log(typeof(Number('4')));
+
+//2)unarnii +
+console.log(typeof(Number(+'5')));
 
 
+//to Boolean
+// 0, '', null, undefined, NaN;
+let switcher = null;
+if (switcher) {
+    console.log('Working');
+}
+switcher = 1;
+if (switcher) {
+    console.log('Working');
+}
 
+//leksiceskoe ocrujenie
+let number2 = 5;
+function logNumber() {
+    let number2 = 4; 
+    console.log(number2);
+}
+number2 = 6;
+logNumber(); 
+
+//interviu
+//let x = 5; alert( x++ );  //5
+//let x = 5; alert( ++x );  //6
+
+//[ ] + false - null + true //[]-string
+console.log([ ] + false - null + true ); //NaN
+
+//let y = 1; 
+//let x2 = y = 2; 
+//alert(x2); //2
+
+console.log([ ] + 1 + 2); //12
+
+//alert( "1"[0] );//1
+
+console.log(2 && 1 && null && 0 && undefined ); //null
+
+//console.log(!!( 1 && 2 ) === (1 && 2)); //false
+
+alert( null || 2 && 3 || 4 ); //3
+
+//const a = [1, 2, 3]; 
+//const b = [1, 2, 3]; 
+//console.log(a == b); //false
+
+alert( +"Infinity" ); //Infinity ('+' tip danix number)
+
+console.log("Ёжик" > "яблоко"); //false
+
+console.log(0 || "" || 2 || undefined || true || false ); //2
+
+//cod.ex.15
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+    return answer;
+}
+
+console.log(isOpen(restorantData.openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+
+    copy.waitors = [{name: 'Mike', age: 32}];
+    return copy;
+}
+
+console.log(transferWaitors(restorantData));
